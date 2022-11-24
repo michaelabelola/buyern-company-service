@@ -1,5 +1,5 @@
 package com.buyern.entityservice.enums;
 
-public enum CompanyType {
+public enum BusinessType {
     E_COMMERCE, LOGISTICS
 }

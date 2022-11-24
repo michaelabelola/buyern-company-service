@@ -12,18 +12,19 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
-@Entity(name = "company_details")
+@Entity(name = "business_details")
 @Getter
 @Setter
 @ToString
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class CompanyDetail {
+public class BusinessDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
     private Long id;
     private String email;
     private String phone;
+    private String registererUid;
     private String govtRegistrationId;
     @Column(columnDefinition = "LONGTEXT")
     private String about;
@@ -37,7 +38,7 @@ public class CompanyDetail {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        CompanyDetail that = (CompanyDetail) o;
+        BusinessDetail that = (BusinessDetail) o;
         return id != null && Objects.equals(id, that.id);
     }
 
